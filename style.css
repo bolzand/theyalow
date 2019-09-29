@@ -1,16 +1,29 @@
 @font-face {
   font-family:'Lucida Sans';
-  src: url(assets/LSANSI.TTF);
+  src: url(assets/fonts/LSANSI.TTF);
 }
 
 @font-face {
   font-family: 'SegoeWP';
-  src:url(assets/SegoeWP.ttf);
+  src:url(assets/fonts/SegoeWP.ttf);
+}
+@font-face {
+  font-family: 'SegoeWP-Light';
+  src:url(assets/fonts/segoe-wp-light.ttf);
 }
 
 @font-face {
   font-family: 'Asap Regular';
-  src: url(assets/Asap-Regular.ttf)
+  src: url(assets/fonts/Asap-Regular.ttf)
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url(assets/fonts/PTSans.ttf)
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url(assets/fonts/OpenSans-Regular.ttf);
 }
 
 body {
@@ -24,26 +37,34 @@ body {
   margin: 0 auto;
 }
 
-.navigation {
+.first {
   position: relative;
-  background: url(assets/layer-header.png) no-repeat;
+  background: url(assets/images/layer-header.png) no-repeat;
   background-size: cover;
 }
 
 header {
   display:flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 30px 140px 56px 142px;
+  align-items: flex-start;
+  padding: 28px 140px 56px 140px;
 }
 
-.icon {
+a {
+  text-decoration: none;
+}
+
+header a:hover h1 {
+  color: #f6c506;
+}
+
+.logo {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.background-icon {
-  background-image: url(assets/theyalow-background.png);
+.logo-icon {
+  background-image: url(assets/images/theyalow-background.png);
   display:flex;
   background-repeat: no-repeat;
   background-position: 2px 2px;
@@ -52,30 +73,59 @@ header {
 h1 {
   margin:0;
   font-family: 'Lucida Sans', italic;
-  font-size: 41.04912px;
+  font-size: 40px;
   font-weight: 300;
   color: #ffffff;
   text-transform: uppercase;
+  margin-top: 32px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  margin-left: 4px;
+}
+
+nav {
+  margin-top: 43px;
 }
 
 .menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
   background-color: #f5c506;
   font-family: 'SegoeWP';
-  padding: 12px 0 12px 25px;
+  padding: 0;
   position: relative;
   box-shadow: -8px -8px 0 0 rgba(245, 197, 6, 0.27),
-  -4px -4px 0 0 rgba(245, 197, 6, 0.27);
+  -4px -4px 0 0 rgba(245, 197, 6, 0.27); 
+  margin: 0;
+  list-style-type:none;
+  height: 41px;
 }
 
 .menu li {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-  font-size: 17.04912px;
-  color: rgba(155, 125, 8, 255);
-  text-align: center;
+  font-family: 'SegoeWP';
+  font-size: 17px;
+  color: rgb(155, 125, 8);
+  text-transform: uppercase;
+  height: 100%;
+  display: flex;
+  background-color: #f5c506;
+}
+
+.menu li:hover {
+  background-color: #feca5d;
+}
+
+.menu li a {
+  height: 100%;
+  color: rgb(155, 125, 8);
+  display: flex;
+  align-items: center;
   padding-right: 22px;
   padding-left: 14px;
-  text-transform: uppercase;
-
+}
+.menu li:first-child a {
+  padding-left: 39px;
 }
 
 .menu li:nth-child(2){
@@ -85,30 +135,28 @@ h1 {
 
 .menu li span{
   margin-left: 9px;
-}
-
-ul{
-  margin: 0;
-  list-style-type:none;
-  display: flex;
+  font-weight: 700;
 }
 
 .face {
   display: flex;
   position: relative;
   padding-left: 150px;
+  padding-bottom: 71px;
 }
 
 .swipeleft {
   position:absolute;
   left: 0;
   top: 132px;
+  cursor: pointer;
 }
 
 .swiperight {
   position:absolute;
   right: 0;
   top: 132px;
+  cursor: pointer;
 }
 
 .video {
@@ -126,8 +174,14 @@ ul{
 .sound {
   position: absolute;
   bottom: 22px;
-  left: 50%;
-  transform: translate(-50%);
+  left: 29px;
+}
+
+.yellow {
+  position: absolute;
+  background-color: rgba(245,197,6,0.11);
+  width: 100%;
+  height: 100%;
 }
 
 .text {
@@ -140,20 +194,21 @@ ul{
   text-transform: uppercase;
 }
 
-.text div:nth-child(1){
-  font-size: 63.04912px;
+.text div:nth-child(1) {
+  font-size: 63px;
   color: #f5c506;
-  text-align: center;
+  line-height: 46px;
+  letter-spacing: 1px;
   }
 
 .text div:nth-child(2) {
-font-size: 63.04912px;
+font-size: 63px;
 color: #ffffff;
-text-align: center;
+margin-top: 20px;
 }
 
 .second {
-background-image: url(assets/layer-diff.png);
+background-image: url(assets/images/layer-diff.png);
 }
 
 .diff {
@@ -161,6 +216,7 @@ background-image: url(assets/layer-diff.png);
   display: flex;
   height: 212px;
   border-right: 1px solid #d4d4d4;
+  
 }
 
 .diff figure {
@@ -175,24 +231,30 @@ background-image: url(assets/layer-diff.png);
 
 .diff figure:nth-child(1) {
   border-left: 1px solid #d4d4d4;
+  line-height: 21px;
 }
 
 .diff figure:nth-child(2) {
   border-left: 1px solid #d4d4d4;
   border-right: 1px solid #d4d4d4;
+  line-height: 21px;
 }
 
 .diff figure:nth-child(3) {
   border-right: 1px solid #d4d4d4;
+  line-height: 21px;
 }
 
 .diff figcaption {
   margin-top: 20px;
   text-transform: uppercase;
+  font-family: 'SegoeWP';
+  font-size: 27px;
 
 }
+
 .third {
-  background-image: url(assets/layer-info.png);
+  background-image: url(assets/images/layer-info.png);
 }
 
 .lorem {
@@ -201,16 +263,19 @@ background-image: url(assets/layer-diff.png);
 
 .info {
   font-family: 'SegoeWP';
-  font-size: 37px;
+  font-size: 36px;
   color: #ffffff;
   text-transform: uppercase;
   margin: 0 0 40px 4px;
+  line-height: 28px;
+  letter-spacing: 1px;
 }
 
 .third .flex-wrapper {
   display: flex;
   align-items: flex-start;
 }
+
 .usefull {
   position: relative;
   font-family: 'SegoeWP';
@@ -224,6 +289,15 @@ background-image: url(assets/layer-diff.png);
   line-height: 35px;
 }
 
+.plus {
+  fill: #ffffff;
+  cursor: pointer;
+}
+
+.plus:hover {
+  fill: #f5cc24;
+}
+
 .usefull .plus {
 position: absolute;
 bottom: 13px;
@@ -232,6 +306,7 @@ right: 14px;
 
 .monkey {
   position: relative;
+  height: 232px;
 }
 
 .thehat {
@@ -252,15 +327,441 @@ right: 14px;
 
 .twitter span {
 position: absolute;
-top: 20px;
+top: 16px;
 right: 19px;
 font-family: 'SegoeWP';
-font-size: 25px;
+font-size: 24px;
 color: #ffffff;
+line-height: 24px;
 }
 
 .twitter .plus {
   position: absolute;
   bottom: 13px;
   right: 9px;
+}
+
+.twitter .wall {
+  display: none;
+}
+
+.april {
+display: flex;
+}
+
+.date {
+  background-color: #ddb101;
+  padding: 15px 26px 9px 31px;
+}
+.datenumber {
+  font-family: 'SegoeWP';
+  font-size: 51px;
+  line-height: 38px;
+  font-weight: 900;
+  text-align: center;
+  color: #ffffff;
+}
+
+.month {
+  font-family: 'SegoeWP';
+  color: #bd781f;
+  font-size: 23px;
+  text-transform: uppercase;
+  line-height: 15px;
+  margin-top: 9px;
+}
+
+.scroll {
+  margin-top: 43px;
+  margin-left: 74px;
+  height: 15px;
+}
+
+.fourth {
+  background-image: url(assets/images/layer-lorem.png)
+}
+
+.fourth h2 {
+  font-family: 'Open Sans';
+  font-weight: 100;
+  margin: 0;
+  color: #f5c60e;
+  font-size: 40px;
+  text-transform: uppercase;
+  line-height: 32px;
+  text-align: center;
+  padding-top: 48px;
+  margin-bottom: 57px;
+}
+
+.fourth .flex-wrapper {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 143px 98px 158px;
+}
+
+.alldevices {
+position: relative;
+}
+
+.radius {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-family: 'Open Sans';
+  background-color: #f5c506;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  top: -43px;
+  left: -19px;
+  font-size: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.points { 
+  margin-top: 50px;
+  margin-left: 78px;
+}
+
+.points li {
+  display: flex;
+  color: #f5c506;
+  font-size: 22px;
+  font-family: "Open Sans";
+  margin-bottom: 26px;
+}
+
+.points li:last-child {
+margin-bottom: 0;
+}
+
+.marker {
+  width: 14px;
+  height: 14px;
+  background-color: #f5c506;
+  display: inline-block;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.marker + span {
+  color: #9c9c9a;
+  line-height: 22px;
+  margin-left: 20px;
+
+}
+
+.points ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  background-color: #4c4c4c;
+  box-shadow: 0 -5px 2px -2px #212121;
+  padding: 6px 0 4px 140px;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+footer a:hover .theyalow-footer {
+  color: #f6c506;
+}
+
+footer .logo {
+  background-image: url(assets/images/footer-icon2.png);
+  display:flex;
+  background-repeat: no-repeat;
+  background-position: 2px 2px;
+  margin-right: 9px;
+}
+
+.theyalow-footer {
+  font-family: "Lucida Sans";
+  text-transform: uppercase;
+  font-size: 29px;
+  color: #ffffff;
+  margin-top: 17px;
+  line-height: 21px;
+}
+
+
+@media (max-width: 700px) {
+  .container {
+    width: 100%;
   }
+
+  header {
+    padding: 0;
+    height: 62px;
+  }
+
+  header a {
+    height: 100%;
+  }
+
+  header .logo {
+    width: 186px;
+    background-color: #5a5a5a;
+    height: 100%;
+  }
+
+  header .logo-icon {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0 0 12px;
+  }
+
+  header .logo-icon img {
+    width: 38px;
+    height: 38px;
+  }
+
+  h1 {
+    font-size: 19px;
+    line-height: 14px;
+    margin-top: 26px;
+  }
+
+  nav {
+    margin-top: 0;
+    height: 100%;
+    flex-grow: 1;
+  }
+
+  .menu {
+    height: 100%;
+    box-shadow: none;
+  }
+
+  .menu li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu li:first-child {
+    padding-left: 0;
+  }
+
+  .face {
+    padding: 0;
+  }
+
+  .face .text {
+    display: none;
+  }
+
+  .face .swipeleft {
+    display: none;
+  }
+
+  .face .swiperight {
+    display: none;
+  }
+
+  .face .video {
+    width: 100%;
+    height: 327px;
+    overflow: hidden;
+  }
+
+  .face .video video {
+    width: 100%;
+    height: 381px;
+  }
+
+  .video .sound {
+    left: 83px;
+  }
+
+  .diff {
+    padding: 0;
+    border-right: none;
+    height: 171px;
+  }
+
+  .diff figure:first-child {
+    border: none;
+  }
+
+  .diff figure:nth-child(2) {
+    border: none;
+  }
+
+  .diff figure:last-child {
+    border: none;
+  }
+
+  .diff figure:first-child svg {
+    width: 89px;
+  }
+
+  .diff figure:nth-child(2) svg {
+    width: 67px;
+  }
+
+  .diff figure:last-child svg {
+    width: 68px;
+  }
+
+  .diff figcaption {
+    font-size: 23px;
+    line-height: 18px;
+    margin-top: 25px;
+  }
+
+  .third {
+    background: #fff;
+  }
+
+  .third h2 {
+    display: none;
+  }
+
+  .lorem {
+    padding: 10px 0 0 0;
+  }
+
+  .third .flex-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .usefull {
+    width: 299px;
+    height: 232px;
+    margin-right: 9px;
+    margin-left: 9px;
+    font-family: 'SegoeWP-Light';
+  }
+
+  .twitter {
+    margin-left: 0;
+    margin-top: 9px;
+    width: 100%;
+    background-color: #f5c507;
+    display: flex;
+    padding: 24px 0 12px 85px;
+    align-items: flex-start;
+  }
+
+  .twitter img {
+    width: 159px;
+    margin-top: 35px;
+  }
+
+  .twitter span, .twitter .plus {
+    display: none;
+  }
+
+  .twitter .wall {
+    display: block;
+    margin-left: 80px;
+  }
+
+  .wall .message {
+    background-image: url(assets/images/twitter-message.png);
+    background-size: cover;
+    width: 284px;
+    padding: 9px 40px 5px 27px;
+    font-size: 13px;
+    line-height: 14px;
+    font-family: Arial;
+    margin-bottom: 14px;
+  }
+
+  .wall .tweet {
+    margin-left: 13px;
+    width: 270px;
+    display: flex;
+  }
+
+  .tweet input {
+    width: 201px;
+    height: 29px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #d0a806;
+    border-right: none;
+    outline: none;
+  }
+
+  .tweet button {
+    width: 69px;
+    height: 29px;
+    background-color: #df9e1c;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #d0a806;
+    border-left: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .tweet button:hover {
+    background-color: #4C4C4C;
+  }
+
+  .lorem .april, .lorem .scroll {
+    display: none;
+  }
+
+  .fourth {
+    padding: 43px 29px 55px 21px;
+  }
+
+  .fourth .points {
+    display: none;
+  }
+
+  .fourth h2 {
+    margin-bottom: 83px;
+    padding-top: 0;
+    font-size: 39px;
+  }
+
+  .fourth .flex-wrapper {
+    padding: 0 0 0 36px;
+  }
+
+  footer {
+    padding: 6px 0 8px 66px;
+  }
+
+  footer .logo {
+    width: 31px;
+    height: 31px;
+    background-size: cover;
+    background-position: 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 11px;
+  }
+
+  footer .logo img {
+    width: 29px;
+    height: 29px;
+  }
+
+  .theyalow-footer {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 12px;
+  }
+  
+}
