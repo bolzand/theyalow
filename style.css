@@ -54,7 +54,11 @@ a {
   text-decoration: none;
 }
 
-header a:hover h1 {
+a:visited {
+  color: #ffffff;
+}
+
+h1 a:hover{
   color: #f6c506;
 }
 
@@ -465,14 +469,17 @@ footer {
   background-color: #4c4c4c;
   box-shadow: 0 -5px 2px -2px #212121;
   padding: 6px 0 4px 140px;
+  display: flex;
 }
 
-footer a {
+footer .theyalow-footer a {
   display: inline-flex;
   align-items: flex-start;
+  text-decoration: none;
+  color: #ffffff;
 }
 
-footer a:hover .theyalow-footer {
+footer a:hover{
   color: #f6c506;
 }
 
